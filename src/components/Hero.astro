@@ -1,0 +1,112 @@
+---
+// Hero section with badge, heading, subtext, and CTA buttons
+---
+
+<section
+  class="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 md:px-6"
+  aria-labelledby="hero-heading"
+>
+  <div
+    class="hero-glow animate-fade-up-hero"
+    style="transition-delay: 300ms;"
+  >
+  </div>
+
+  <div class="max-w-[720px] mx-auto flex flex-col items-center text-center">
+    <!-- Badge -->
+    <div
+      class="animate-fade-up-hero inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase border"
+      style="background: rgba(227,19,55,0.1); border-color: rgba(227,19,55,0.2); color: #e31337; transition-delay: 100ms;"
+    >
+      <svg
+        width="6"
+        height="6"
+        viewBox="0 0 6 6"
+        fill="#e31337"
+        aria-hidden="true"><circle cx="3" cy="3" r="3"></circle></svg
+      >
+      NEW v1.7.0
+    </div>
+
+    <!-- Heading -->
+    <h1
+      id="hero-heading"
+      class="animate-fade-up-hero mt-6 text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] font-bold leading-[1.1] tracking-tight text-white"
+      style="transition-delay: 200ms;"
+    >
+      Your keys. Your MetaMask. Your Hive.
+    </h1>
+
+    <!-- Subtext -->
+    <p
+      class="animate-fade-up-hero mt-6 text-lg text-text-secondary leading-relaxed max-w-[560px] mx-auto"
+      style="transition-delay: 400ms;"
+    >
+      Sign Hive transactions, derive keys, and encrypt data &mdash; all secured
+      inside MetaMask. Private keys never leave the sandbox.
+    </p>
+
+    <!-- CTA group -->
+    <div
+      class="animate-fade-up-hero mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+      style="transition-delay: 600ms;"
+    >
+      <a
+        href="https://snaps.metamask.io/snap/npm/@hiveio/metamask-snap/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base w-full sm:w-auto min-h-[48px]"
+      >
+        <!-- MetaMask fox icon -->
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M21.3 2L13.1 8.1l1.5-3.6L21.3 2z"
+            fill="#E2761B"
+            stroke="#E2761B"
+            stroke-width="0.3"></path>
+          <path
+            d="M2.7 2l8.1 6.2-1.4-3.7L2.7 2zM18.4 17.2l-2.2 3.3 4.7 1.3 1.3-4.5-3.8-.1zM1.8 17.3l1.3 4.5 4.7-1.3-2.2-3.3-3.8.1z"
+            fill="#E4761B"
+            stroke="#E4761B"
+            stroke-width="0.3"></path>
+          <path
+            d="M7.5 10.5L6.3 12.3l4.7.2-.2-5-3.3 3zM16.5 10.5l-3.4-3.1-.1 5.1 4.7-.2-1.2-1.8zM7.8 20.5l2.8-1.4-2.4-1.9-.4 3.3zM13.4 19.1l2.8 1.4-.4-3.3-2.4 1.9z"
+            fill="#E4761B"
+            stroke="#E4761B"
+            stroke-width="0.3"></path>
+        </svg>
+        Install Snap
+      </a>
+      <a
+        href="https://gitlab.syncad.com/hive/metamask-snap"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-ghost inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base w-full sm:w-auto min-h-[48px]"
+      >
+        <!-- GitLab icon -->
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.06 3.26a.42.42 0 0 0-.14-.18.38.38 0 0 0-.23-.07.39.39 0 0 0-.22.11.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.73-6.88a.74.74 0 0 0 .27-.83Z"
+          ></path>
+        </svg>
+        View on GitLab
+      </a>
+    </div>
+  </div>
+</section>

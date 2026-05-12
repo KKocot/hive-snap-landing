@@ -1,0 +1,223 @@
+---
+// For Developers section — RPC cards + code block + links
+---
+
+<section
+  id="developers"
+  class="py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-bg-card"
+  aria-labelledby="dev-heading"
+>
+  <div class="max-w-[900px] mx-auto">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h2
+        id="dev-heading"
+        class="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4"
+      >
+        Built for developers
+      </h2>
+      <p class="text-lg text-text-secondary">
+        Four RPC methods. One npm install. Full Hive integration.
+      </p>
+    </div>
+
+    <!-- RPC Cards -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12"
+      data-stagger="true"
+    >
+      <div
+        class="animate-on-scroll p-5 rounded-xl border bg-bg-elevated"
+        style="border-color: var(--border-subtle);"
+      >
+        <p class="font-mono text-sm font-medium mb-1 text-accent-hive">
+          hive_getPublicKeys
+        </p>
+        <p class="text-sm text-text-secondary">
+          Derive owner, active, posting, memo public keys
+        </p>
+      </div>
+      <div
+        class="animate-on-scroll p-5 rounded-xl border bg-bg-elevated"
+        style="border-color: var(--border-subtle);"
+      >
+        <p class="font-mono text-sm font-medium mb-1 text-accent-hive">
+          hive_signTransaction
+        </p>
+        <p class="text-sm text-text-secondary">
+          Sign and broadcast Hive transactions
+        </p>
+      </div>
+      <div
+        class="animate-on-scroll p-5 rounded-xl border bg-bg-elevated"
+        style="border-color: var(--border-subtle);"
+      >
+        <p class="font-mono text-sm font-medium mb-1 text-accent-hive">
+          hive_encrypt
+        </p>
+        <p class="text-sm text-text-secondary">
+          Encrypt buffers with memo key pairs
+        </p>
+      </div>
+      <div
+        class="animate-on-scroll p-5 rounded-xl border bg-bg-elevated"
+        style="border-color: var(--border-subtle);"
+      >
+        <p class="font-mono text-sm font-medium mb-1 text-accent-hive">
+          hive_decrypt
+        </p>
+        <p class="text-sm text-text-secondary">
+          Decrypt previously encrypted data
+        </p>
+      </div>
+    </div>
+
+    <!-- Code block -->
+    <div
+      class="animate-on-scroll rounded-xl border overflow-hidden bg-bg-code"
+      style="border-color: var(--border-subtle);"
+    >
+      <div
+        class="flex justify-between items-center px-4 py-3 border-b bg-bg-elevated"
+        style="border-color: var(--border-subtle);"
+      >
+        <span class="font-mono text-xs text-text-muted" aria-hidden="true"
+          >Terminal</span
+        >
+        <button
+          id="copy-btn"
+          class="text-xs transition-colors duration-150 cursor-pointer text-text-muted"
+          aria-label="Copy install command to clipboard"
+        >
+          <span class="flex items-center gap-1.5">
+            <svg
+              id="copy-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
+              ></path>
+            </svg>
+            <span id="copy-text">Copy</span>
+          </span>
+        </button>
+      </div>
+      <pre
+        class="p-6 font-mono text-sm leading-relaxed overflow-x-auto text-text-code"
+        style="-webkit-overflow-scrolling: touch;"><code
+          aria-label="npm install command"
+          ><span class="code-keyword">npm</span> install @hiveio/metamask-snap</code
+        ></pre>
+    </div>
+
+    <!-- Links -->
+    <div class="flex flex-wrap justify-center gap-6 mt-8">
+      <a
+        href="https://www.npmjs.com/package/@hiveio/metamask-snap"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-medium transition-colors duration-150 hover:underline inline-flex items-center gap-1 text-accent-hive"
+      >
+        View on npm
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+        >
+      </a>
+      <a
+        href="https://gitlab.syncad.com/hive/metamask-snap"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-medium transition-colors duration-150 hover:underline inline-flex items-center gap-1 text-accent-hive"
+      >
+        GitLab Repository
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+        >
+      </a>
+      <a
+        href="https://auth.openhive.network"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-medium transition-colors duration-150 hover:underline inline-flex items-center gap-1 text-accent-hive"
+      >
+        Live Demo
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+        >
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Copy to clipboard
+  const copyBtn = document.getElementById("copy-btn");
+  const copyText = document.getElementById("copy-text");
+
+  copyBtn?.addEventListener("click", () => {
+    const command = "npm install @hiveio/metamask-snap";
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(command).then(onCopySuccess);
+    } else {
+      // Fallback
+      const textarea = document.createElement("textarea");
+      textarea.value = command;
+      textarea.style.cssText = "position:fixed;left:-9999px;";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        onCopySuccess();
+      } catch {
+        // silent fail
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function onCopySuccess(): void {
+      if (copyText) {
+        copyText.textContent = "Copied!";
+        copyText.style.color = "var(--color-success)";
+        setTimeout(() => {
+          copyText.textContent = "Copy";
+          copyText.style.color = "";
+        }, 2000);
+      }
+    }
+  });
+</script>

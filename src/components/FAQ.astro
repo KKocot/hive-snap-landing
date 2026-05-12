@@ -1,0 +1,132 @@
+---
+// FAQ accordion section
+const faqs = [
+  {
+    id: 1,
+    question: "Is this officially made by Hive?",
+    answer:
+      "Yes. This Snap is developed and maintained by the Hive community under the @hiveio organization. Source code is fully open on GitLab.",
+  },
+  {
+    id: 2,
+    question: "Are my private keys safe?",
+    answer:
+      "Absolutely. Private keys are derived from your MetaMask seed phrase using BIP44 standard, used for a single operation, and immediately cleared from memory. Keys never leave the MetaMask sandbox environment.",
+  },
+  {
+    id: 3,
+    question: "Which Hive key types are supported?",
+    answer:
+      "All four: owner, active, posting, and memo keys. Each is derived from the HD wallet path m/44'/3054' with the corresponding role index.",
+  },
+  {
+    id: 4,
+    question: "Does it work with hardware wallets?",
+    answer:
+      "If your MetaMask is connected to a hardware wallet (Ledger, Trezor), the Snap uses MetaMask's BIP44 entropy API which abstracts the key source. Hardware wallet support depends on MetaMask's own integration.",
+  },
+  {
+    id: 5,
+    question: "What happens if MetaMask updates?",
+    answer:
+      "The Snap follows MetaMask's platform versioning (currently v6.14.0). Updates are tested against the latest MetaMask releases in CI before publishing.",
+  },
+  {
+    id: 6,
+    question: "How do I use this in my dApp?",
+    answer:
+      "Install the Snap via npm (@hiveio/metamask-snap), connect using MetaMask's Snap API, and call RPC methods like hive_signTransaction. See our GitLab documentation for full integration guides.",
+  },
+];
+---
+
+<section
+  id="faq"
+  class="py-16 md:py-20 lg:py-24 px-4 md:px-6"
+  aria-labelledby="faq-heading"
+>
+  <div class="max-w-[720px] mx-auto">
+    <h2
+      id="faq-heading"
+      class="text-[2rem] md:text-[2.5rem] font-bold text-white text-center mb-12 animate-on-scroll"
+    >
+      Frequently asked questions
+    </h2>
+
+    <div class="animate-on-scroll" role="region" aria-label="FAQ">
+      {
+        faqs.map((faq, index) => (
+          <div
+            class:list={[
+              "border-t",
+              { "border-b": index === faqs.length - 1 },
+            ]}
+            style="border-color: var(--border-subtle);"
+          >
+            <h3>
+              <button
+                class="faq-trigger flex justify-between items-center w-full py-5 text-left text-base font-medium text-white cursor-pointer transition-colors duration-150 hover:text-accent-hive"
+                aria-expanded="false"
+                aria-controls={`faq-${faq.id}-content`}
+                id={`faq-${faq.id}-trigger`}
+              >
+                {faq.question}
+                <svg
+                  class="faq-chevron shrink-0 ml-4"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  style="color: var(--color-text-muted);"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+            </h3>
+            <div
+              id={`faq-${faq.id}-content`}
+              class="faq-content"
+              role="region"
+              aria-labelledby={`faq-${faq.id}-trigger`}
+            >
+              <div>
+                <p class="pb-5 text-sm text-text-secondary leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ Accordion
+  const faqTriggers = document.querySelectorAll(".faq-trigger");
+
+  faqTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", function (this: HTMLButtonElement) {
+      const expanded = this.getAttribute("aria-expanded") === "true";
+      const contentId = this.getAttribute("aria-controls");
+      const content = document.getElementById(contentId!);
+      const chevron = this.querySelector(".faq-chevron");
+
+      if (expanded) {
+        this.setAttribute("aria-expanded", "false");
+        content?.classList.remove("open");
+        chevron?.classList.remove("rotated");
+      } else {
+        this.setAttribute("aria-expanded", "true");
+        content?.classList.add("open");
+        chevron?.classList.add("rotated");
+      }
+    });
+  });
+</script>

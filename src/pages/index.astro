@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import TrustedBy from "../components/TrustedBy.astro";
+import Features from "../components/Features.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Security from "../components/Security.astro";
+import ForDevelopers from "../components/ForDevelopers.astro";
+import FAQ from "../components/FAQ.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Hive Wallet - MetaMask Snap for Hive Blockchain"
+  description="Sign Hive transactions, derive keys, and encrypt data — all secured inside MetaMask. Private keys never leave the sandbox."
+>
+  <Navbar />
+  <main id="main-content">
+    <Hero />
+    <TrustedBy />
+    <Features />
+    <HowItWorks />
+    <Security />
+    <ForDevelopers />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // Scroll animations (Intersection Observer)
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (!reducedMotion) {
+    const animElements = document.querySelectorAll(
+      ".animate-on-scroll, .animate-fade-up-hero, .animate-scale-in, .animate-slide-left, .steps-line",
+    );
+
+    const scrollObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -60px 0px",
+      },
+    );
+
+    animElements.forEach((el) => {
+      scrollObserver.observe(el);
+    });
+
+    // Stagger children in [data-stagger] containers
+    document
+      .querySelectorAll('[data-stagger="true"]')
+      .forEach((parent) => {
+        const children = parent.querySelectorAll(".animate-on-scroll");
+        children.forEach((child, index) => {
+          (child as HTMLElement).style.transitionDelay = index * 80 + "ms";
+        });
+      });
+
+    // Hero animations auto-trigger (they are above fold)
+    setTimeout(() => {
+      document.querySelectorAll(".animate-fade-up-hero").forEach((el) => {
+        el.classList.add("visible");
+      });
+    }, 100);
+  }
+</script>
