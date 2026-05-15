@@ -1,10 +1,10 @@
 ---
-// Security section — 2-column layout with feature list
+// Security section — 2-column layout with permission & guarantee lists
 ---
 
 <section
   id="security"
-  class="py-16 md:py-20 lg:py-24 px-4 md:px-6"
+  class="min-h-screen flex flex-col justify-center py-16 md:py-20 lg:py-24 px-4 md:px-6"
   aria-labelledby="security-heading"
 >
   <div
@@ -24,164 +24,261 @@
         Your keys never leave MetaMask
       </h2>
       <p class="text-base text-text-secondary leading-relaxed max-w-[480px]">
-        Built on industry-standard BIP44 key derivation with multiple layers of
-        protection. Every cryptographic operation runs in an isolated environment
-        with explicit user approval.
+        Hive Wallet Snap operates under the principle of least privilege.
+        Every permission is scoped to the minimum required, and no private keys
+        are stored in memory or exposed to the client.
       </p>
     </div>
 
-    <!-- Right column - feature list -->
-    <div class="flex flex-col gap-4">
-      <!-- Item 1 -->
-      <div
-        class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
-        style="border-color: var(--border-subtle);"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#e31337"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="shrink-0 mt-0.5"
-          aria-hidden="true"
+    <!-- Right column — two groups -->
+    <div class="flex flex-col gap-8">
+      <!-- Group 1: Required Permissions -->
+      <div class="animate-on-scroll">
+        <h3
+          class="text-sm uppercase tracking-[0.08em] font-semibold text-accent-hive mb-4"
         >
-          <path
-            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-          ></path>
-        </svg>
-        <div>
-          <h3 class="text-base font-medium text-white mb-1">
-            BIP44 Derivation
-          </h3>
-          <p class="text-sm text-text-secondary">
-            Industry-standard HD wallet path m/44'/3054' (coin type 0xBEE)
-          </p>
+          Required Permissions
+        </h3>
+        <div class="flex flex-col gap-3">
+          <!-- Permission 1 — snap_getBip44Entropy -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle);"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+            </svg>
+            <div>
+              <h4 class="text-base font-medium text-white mb-1">
+                <code class="font-mono text-sm bg-bg-code px-1.5 py-0.5 rounded">snap_getBip44Entropy</code>
+              </h4>
+              <p class="text-sm text-text-secondary">
+                For deriving Hive keys from MetaMask seed phrase
+              </p>
+            </div>
+          </div>
+
+          <!-- Permission 2 — endowment:rpc -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle); transition-delay: 60ms;"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            <div>
+              <h4 class="text-base font-medium text-white mb-1">
+                <code class="font-mono text-sm bg-bg-code px-1.5 py-0.5 rounded">endowment:rpc</code>
+              </h4>
+              <p class="text-sm text-text-secondary">
+                For Snap communication with dApps
+              </p>
+            </div>
+          </div>
+
+          <!-- Permission 3 — snap_dialog -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle); transition-delay: 120ms;"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <div>
+              <h4 class="text-base font-medium text-white mb-1">
+                <code class="font-mono text-sm bg-bg-code px-1.5 py-0.5 rounded">snap_dialog</code>
+              </h4>
+              <p class="text-sm text-text-secondary">
+                For user confirmation when signing transactions or encrypting/decrypting buffer
+              </p>
+            </div>
+          </div>
+
+          <!-- Permission 4 — endowment:webassembly -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle); transition-delay: 180ms;"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+              <path d="m3.3 7 8.7 5 8.7-5"></path>
+              <path d="M12 22V12"></path>
+            </svg>
+            <div>
+              <h4 class="text-base font-medium text-white mb-1">
+                <code class="font-mono text-sm bg-bg-code px-1.5 py-0.5 rounded">endowment:webassembly</code>
+              </h4>
+              <p class="text-sm text-text-secondary">
+                For WebAssembly support in Hive libraries: Wax and Beekeeper
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Item 2 -->
-      <div
-        class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
-        style="border-color: var(--border-subtle); transition-delay: 60ms;"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#e31337"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="shrink-0 mt-0.5"
-          aria-hidden="true"
+      <!-- Group 2: Security Guarantees -->
+      <div class="animate-on-scroll">
+        <h3
+          class="text-sm uppercase tracking-[0.08em] font-semibold text-accent-hive mb-4"
         >
-          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </svg>
-        <div>
-          <h3 class="text-base font-medium text-white mb-1">No Key Storage</h3>
-          <p class="text-sm text-text-secondary">
-            Keys derived on-demand, used once, immediately cleared from memory
-          </p>
-        </div>
-      </div>
+          Security Guarantees
+        </h3>
+        <div class="flex flex-col gap-3">
+          <!-- Guarantee 1 -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle); transition-delay: 240ms;"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <div>
+              <p class="text-sm text-text-secondary">
+                Keys are derived only when needed and immediately cleared from memory after usage
+              </p>
+            </div>
+          </div>
 
-      <!-- Item 3 -->
-      <div
-        class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
-        style="border-color: var(--border-subtle); transition-delay: 120ms;"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#e31337"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="shrink-0 mt-0.5"
-          aria-hidden="true"
-        >
-          <path
-            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
-          ></path>
-          <path d="m3.3 7 8.7 5 8.7-5"></path>
-          <path d="M12 22V12"></path>
-        </svg>
-        <div>
-          <h3 class="text-base font-medium text-white mb-1">WASM Sandbox</h3>
-          <p class="text-sm text-text-secondary">
-            Cryptographic operations run in isolated WebAssembly environment
-          </p>
-        </div>
-      </div>
+          <!-- Guarantee 2 -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle); transition-delay: 300ms;"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+              <line x1="12" y1="2" x2="12" y2="12"></line>
+            </svg>
+            <div>
+              <p class="text-sm text-text-secondary">
+                No network requests are made
+              </p>
+            </div>
+          </div>
 
-      <!-- Item 4 -->
-      <div
-        class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
-        style="border-color: var(--border-subtle); transition-delay: 180ms;"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#e31337"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="shrink-0 mt-0.5"
-          aria-hidden="true"
-        >
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-          <polyline points="22 4 12 14.01 9 11.01"></polyline>
-        </svg>
-        <div>
-          <h3 class="text-base font-medium text-white mb-1">
-            User Confirmation
-          </h3>
-          <p class="text-sm text-text-secondary">
-            Every sensitive operation requires explicit MetaMask dialog approval
-          </p>
-        </div>
-      </div>
+          <!-- Guarantee 3 -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle); transition-delay: 360ms;"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+            </svg>
+            <div>
+              <p class="text-sm text-text-secondary">
+                Input validation is performed on all transaction data
+              </p>
+            </div>
+          </div>
 
-      <!-- Item 5 -->
-      <div
-        class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
-        style="border-color: var(--border-subtle); transition-delay: 240ms;"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#e31337"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="shrink-0 mt-0.5"
-          aria-hidden="true"
-        >
-          <path d="M3 11h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3z"></path>
-          <path d="M21 11h-2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2z"></path>
-          <path d="M12 2a8 8 0 0 0-8 8v2h16v-2a8 8 0 0 0-8-8z"></path>
-          <circle cx="12" cy="13" r="1"></circle>
-          <path d="M12 14v3"></path>
-        </svg>
-        <div>
-          <h3 class="text-base font-medium text-white mb-1">
-            CI Security Audits
-          </h3>
-          <p class="text-sm text-text-secondary">
-            Automated Snapper security analysis on every build pipeline
-          </p>
+          <!-- Guarantee 4 -->
+          <div
+            class="animate-slide-left flex items-start gap-4 p-4 rounded-xl border bg-bg-elevated"
+            style="border-color: var(--border-subtle); transition-delay: 420ms;"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#e31337"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M3 11h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3z"></path>
+              <path d="M21 11h-2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2z"></path>
+              <path d="M12 2a8 8 0 0 0-8 8v2h16v-2a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="13" r="1"></circle>
+              <path d="M12 14v3"></path>
+            </svg>
+            <div>
+              <p class="text-sm text-text-secondary">
+                No sensitive data is stored in browser storage
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
