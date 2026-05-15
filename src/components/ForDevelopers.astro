@@ -4,7 +4,7 @@
 
 <section
   id="developers"
-  class="py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-bg-card"
+  class="min-h-screen flex flex-col justify-center py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-bg-card"
   aria-labelledby="dev-heading"
 >
   <div class="max-w-[900px] mx-auto">
@@ -115,6 +115,99 @@
           aria-label="npm install command"
           ><span class="code-keyword">npm</span> install @hiveio/metamask-snap</code
         ></pre>
+    </div>
+
+    <!-- Prerequisites -->
+    <div class="animate-on-scroll mt-8">
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-text-muted mb-4">
+        Prerequisites
+      </h3>
+      <div
+        class="rounded-xl border p-5 bg-bg-elevated"
+        style="border-color: var(--border-subtle);"
+      >
+        <ul class="space-y-3" role="list">
+          <li class="flex items-center gap-3 text-sm text-text-secondary">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-success)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0"
+              aria-hidden="true"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Node.js <span class="font-mono text-text-code">&gt;= 20.18.1</span></span>
+          </li>
+          <li class="flex items-center gap-3 text-sm text-text-secondary">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-success)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0"
+              aria-hidden="true"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>pnpm <span class="font-mono text-text-code">= 10.0.0</span></span>
+          </li>
+          <li class="flex items-center gap-3 text-sm text-text-secondary">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-success)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="shrink-0"
+              aria-hidden="true"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>MetaMask Flask</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Architecture -->
+    <div class="animate-on-scroll mt-6">
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-text-muted mb-4">
+        Architecture
+      </h3>
+      <div
+        class="rounded-xl border overflow-hidden bg-bg-code"
+        style="border-color: var(--border-subtle);"
+      >
+        <div
+          class="flex items-center px-4 py-3 border-b bg-bg-elevated"
+          style="border-color: var(--border-subtle);"
+        >
+          <span class="font-mono text-xs text-text-muted" aria-hidden="true">Project structure</span>
+        </div>
+        <pre
+          class="p-6 font-mono text-sm leading-relaxed overflow-x-auto text-text-code"
+          style="-webkit-overflow-scrolling: touch;"
+          aria-label="Snap project file structure"><code><span class="code-keyword">src/</span>
+&#9500;&#9472;&#9472; assets/            <span class="text-text-muted"># Snap assets, e.g. icons</span>
+&#9500;&#9472;&#9472; hive/              <span class="text-text-muted"># Hive libraries configuration</span>
+&#9500;&#9472;&#9472; index.ts           <span class="text-text-muted"># Main Snap entry point</span>
+&#9500;&#9472;&#9472; rpc.ts             <span class="text-text-muted"># RPC method types</span>
+&#9500;&#9472;&#9472; snap/              <span class="text-text-muted"># RPC method handlers</span>
+&#9492;&#9472;&#9472; priviledged-apis/  <span class="text-text-muted"># Bip44 entropy functions</span></code></pre>
+      </div>
     </div>
 
     <!-- Links -->
