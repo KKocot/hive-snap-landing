@@ -1,25 +1,51 @@
 ---
-// Hero section with heading, subtext, and CTA buttons
+// Hero section with heading, subtext, and scroll-down indicator
 ---
 
 <section
-  class="min-h-screen flex flex-col justify-center relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 md:px-6"
+  class="hero-fade-bottom min-h-screen flex flex-col items-center justify-center relative px-4 md:px-6 overflow-hidden"
   aria-labelledby="hero-heading"
 >
-  <div
-    class="hero-glow animate-fade-up-hero"
-    style="transition-delay: 300ms;"
-  >
-  </div>
+  <div class="max-w-[720px] mx-auto flex flex-col items-center text-center relative z-10">
+    <!-- Hive + MetaMask combo logo -->
+    <div
+      class="animate-fade-up-hero flex items-center gap-4 md:gap-6 mb-8"
+      style="transition-delay: 100ms;"
+    >
+      <!-- Hive logo -->
+      <svg class="h-14 md:h-20 w-auto" viewBox="0 0 220 190" fill="#e31337" aria-hidden="true">
+        <path d="M157.272625,107.263942 C157.998992,107.263942 158.45262,108.051463 158.088736,108.68075 L111.33839,189.528945 C111.169808,189.820485 110.858795,190 110.522279,190 L81.9443812,190 C81.2180145,190 80.764386,189.212478 81.1282705,188.583191 L127.878616,107.734996 C128.047199,107.443456 128.358211,107.263942 128.694727,107.263942 L157.272625,107.263942 Z M129.477721,84.0901367 C129.141205,84.0901367 128.830192,83.9106218 128.66161,83.6190818 L81.1282705,1.41680884 C80.764386,0.787521511 81.2180145,0 81.9443812,0 L110.522279,0 C110.858795,0 111.169808,0.179514873 111.33839,0.471054898 L158.87173,82.6733278 C159.235614,83.3026152 158.781986,84.0901367 158.055619,84.0901367 L129.477721,84.0901367 Z"/>
+        <path d="M135.128406 1.41635199C134.76385.787064228 135.218932 0 135.947343 0L164.565951 0C164.903712 0 165.215845.179714185 165.384888.47151174L219.873006 94.5275799C220.042331 94.8198642 220.042331 95.1801358 219.873006 95.4724201L165.384888 189.528488C165.215845 189.820286 164.903712 190 164.565951 190L135.947343 190C135.218932 190 134.76385 189.212936 135.128406 188.583648L189.342845 95 135.128406 1.41635199zM111.870216 94.5240823C112.042446 94.816752 112.043313 95.1785591 111.872487 95.4720377L57.1252257 189.528106C56.7599958 190.155572 55.8478414 190.157723 55.4796094 189.531986L.129783614 95.4759177C-.0424457704 95.183248-.0433125021 94.8214409.127512727 94.5279623L54.8747743.471894257C55.2400042-.15557243 56.1521586-.157723129 56.5203906.468014185L111.870216 94.5240823z"/>
+      </svg>
 
-  <div class="max-w-[720px] mx-auto flex flex-col items-center text-center">
+      <!-- Connector -->
+      <span class="text-text-muted text-2xl md:text-3xl font-light select-none" aria-hidden="true">&times;</span>
+
+      <!-- MetaMask fox logo (official) -->
+      <svg class="h-18 md:h-26 w-auto" viewBox="0 0 318.6 318.6" aria-hidden="true">
+        <path fill="#e2761b" stroke="#e2761b" stroke-linecap="round" stroke-linejoin="round" d="m274.1 35.5-99.5 73.9L193 65.8z"/>
+        <path fill="#e4761b" stroke="#e4761b" stroke-linecap="round" stroke-linejoin="round" d="m44.4 35.5 98.7 74.6-17.5-44.3zm193.9 171.3-26.5 40.6 56.7 15.6 16.3-55.3zm-204.4.9L50.1 263l56.7-15.6-26.5-40.6z"/>
+        <path fill="#e4761b" stroke="#e4761b" stroke-linecap="round" stroke-linejoin="round" d="m103.6 138.2-15.8 23.9 56.3 2.5-2-60.5zm111.3 0-39-34.8-1.3 61.2 56.2-2.5zM106.8 247.4l33.8-16.5-29.2-22.8zm71.1-16.5 33.9 16.5-4.7-39.3z"/>
+        <path fill="#d7c1b3" stroke="#d7c1b3" stroke-linecap="round" stroke-linejoin="round" d="m211.8 247.4-33.9-16.5 2.7 22.1-.3 9.3zm-105 0 31.5 14.9-.2-9.3 2.5-22.1z"/>
+        <path fill="#233447" stroke="#233447" stroke-linecap="round" stroke-linejoin="round" d="m138.8 193.5-28.2-8.3 19.9-9.1zm40.9 0 8.3-17.4 20 9.1z"/>
+        <path fill="#cd6116" stroke="#cd6116" stroke-linecap="round" stroke-linejoin="round" d="m106.8 247.4 4.8-40.6-31.3.9zM207 206.8l4.8 40.6 26.5-39.7zm23.8-44.7-56.2 2.5 5.2 28.9 8.3-17.4 20 9.1zm-120.2 23.1 20-9.1 8.2 17.4 5.3-28.9-56.3-2.5z"/>
+        <path fill="#e4751f" stroke="#e4751f" stroke-linecap="round" stroke-linejoin="round" d="m87.8 162.1 23.6 46-.8-22.9zm120.3 23.1-1 22.9 23.7-46zm-64-20.6-5.3 28.9 6.6 34.1 1.5-44.9zm30.5 0-2.7 18 1.2 45 6.7-34.1z"/>
+        <path fill="#f6851b" stroke="#f6851b" stroke-linecap="round" stroke-linejoin="round" d="m179.8 193.5-6.7 34.1 4.8 3.3 29.2-22.8 1-22.9zm-69.2-8.3.8 22.9 29.2 22.8 4.8-3.3-6.6-34.1z"/>
+        <path fill="#c0ad9e" stroke="#c0ad9e" stroke-linecap="round" stroke-linejoin="round" d="m180.3 262.3.3-9.3-2.5-2.2h-37.7l-2.3 2.2.2 9.3-31.5-14.9 11 9 22.3 15.5h38.3l22.4-15.5 11-9z"/>
+        <path fill="#161616" stroke="#161616" stroke-linecap="round" stroke-linejoin="round" d="m177.9 230.9-4.8-3.3h-27.7l-4.8 3.3-2.5 22.1 2.3-2.2h37.7l2.5 2.2z"/>
+        <path fill="#763d16" stroke="#763d16" stroke-linecap="round" stroke-linejoin="round" d="m278.3 114.2 8.5-40.8-12.7-37.9-96.2 71.4 37 31.3 52.3 15.3 11.6-13.5-5-3.6 8-7.3-6.2-4.8 8-6.1zM31.8 73.4l8.5 40.8-5.4 4 8 6.1-6.1 4.8 8 7.3-5 3.6 11.5 13.5 52.3-15.3 37-31.3-96.2-71.4z"/>
+        <path fill="#f6851b" stroke="#f6851b" stroke-linecap="round" stroke-linejoin="round" d="m267.2 153.5-52.3-15.3 15.9 23.9-23.7 46 31.2-.4h46.5zm-163.6-15.3-52.3 15.3-17.4 54.2h46.4l31.1.4-23.6-46zm71 26.4 3.3-57.7 15.2-41.1h-67.5l15 41.1 3.5 57.7 1.2 18.2.1 44.8h27.7l.2-44.8z"/>
+      </svg>
+    </div>
+
     <!-- Heading -->
     <h1
       id="hero-heading"
-      class="animate-fade-up-hero mt-6 text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] font-bold leading-[1.1] tracking-tight text-white"
+      class="animate-fade-up-hero mt-6 font-bold leading-[1.1] tracking-tight"
       style="transition-delay: 200ms;"
     >
-      Your keys. Your MetaMask. Your Hive.
+      <span class="block text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] text-white">MetaMask Snap</span>
+      <span class="block mt-3 text-[1.125rem] sm:text-[1.25rem] md:text-[1.5rem] lg:text-[1.75rem] font-medium text-text-secondary">Your keys. Your MetaMask. Your Hive.</span>
     </h1>
 
     <!-- Subtext -->
@@ -30,68 +56,13 @@
       Sign Hive transactions, derive keys, and encrypt data &mdash; all secured
       inside MetaMask. Private keys never leave the sandbox.
     </p>
-
-    <!-- CTA group -->
-    <div
-      class="animate-fade-up-hero mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-      style="transition-delay: 600ms;"
-    >
-      <a
-        href="https://snaps.metamask.io/snap/npm/@hiveio/metamask-snap/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base w-full sm:w-auto min-h-[48px]"
-      >
-        <!-- MetaMask fox icon -->
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M21.3 2L13.1 8.1l1.5-3.6L21.3 2z"
-            fill="#E2761B"
-            stroke="#E2761B"
-            stroke-width="0.3"></path>
-          <path
-            d="M2.7 2l8.1 6.2-1.4-3.7L2.7 2zM18.4 17.2l-2.2 3.3 4.7 1.3 1.3-4.5-3.8-.1zM1.8 17.3l1.3 4.5 4.7-1.3-2.2-3.3-3.8.1z"
-            fill="#E4761B"
-            stroke="#E4761B"
-            stroke-width="0.3"></path>
-          <path
-            d="M7.5 10.5L6.3 12.3l4.7.2-.2-5-3.3 3zM16.5 10.5l-3.4-3.1-.1 5.1 4.7-.2-1.2-1.8zM7.8 20.5l2.8-1.4-2.4-1.9-.4 3.3zM13.4 19.1l2.8 1.4-.4-3.3-2.4 1.9z"
-            fill="#E4761B"
-            stroke="#E4761B"
-            stroke-width="0.3"></path>
-        </svg>
-        Install Snap
-      </a>
-      <a
-        href="https://gitlab.syncad.com/hive/metamask-snap"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-ghost inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base w-full sm:w-auto min-h-[48px]"
-      >
-        <!-- GitLab icon -->
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path
-            d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.06 3.26a.42.42 0 0 0-.14-.18.38.38 0 0 0-.23-.07.39.39 0 0 0-.22.11.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.73-6.88a.74.74 0 0 0 .27-.83Z"
-          ></path>
-        </svg>
-        View on GitLab
-      </a>
-    </div>
   </div>
+
+  <!-- Scroll-down arrow -->
+  <a href="#features" class="scroll-indicator mt-12 text-white/40 hover:text-white/70 transition-colors relative z-10" aria-label="Scroll to features">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 13l5 5 5-5"/>
+      <path d="M7 6l5 5 5-5"/>
+    </svg>
+  </a>
 </section>
