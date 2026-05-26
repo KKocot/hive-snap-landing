@@ -216,29 +216,6 @@ body {
 }
 
 /* ============================================================
- * STEPS CONNECTING LINE
- * ============================================================ */
-.steps-line {
-  position: absolute;
-  top: 24px;
-  left: calc(16.67% + 24px);
-  right: calc(16.67% + 24px);
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    var(--color-accent-hive),
-    var(--border-subtle),
-    var(--color-accent-hive)
-  );
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 600ms var(--ease-in-out);
-}
-.steps-line.visible {
-  transform: scaleX(1);
-}
-
-/* ============================================================
  * FAQ ACCORDION
  * ============================================================ */
 .faq-content {
@@ -364,9 +341,6 @@ body {
   .animate-slide-left {
     opacity: 1 !important;
     transform: none !important;
-  }
-  .steps-line {
-    transform: scaleX(1) !important;
   }
   .hex-float-1,
   .hex-float-2,

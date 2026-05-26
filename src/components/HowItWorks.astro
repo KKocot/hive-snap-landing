@@ -1,5 +1,5 @@
 ---
-// How It Works — 3 steps with connecting line
+// How It Works — vertical stacked steps
 ---
 
 <section
@@ -7,7 +7,7 @@
   class="min-h-screen flex flex-col justify-center py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-bg-card"
   aria-labelledby="how-heading"
 >
-  <div class="max-w-[900px] mx-auto">
+  <div class="max-w-[900px] mx-auto w-full">
     <h2
       id="how-heading"
       class="text-[2rem] md:text-[2.5rem] font-bold text-white text-center mb-16 animate-on-scroll"
@@ -15,62 +15,62 @@
       Get started in three steps
     </h2>
 
-    <div class="relative flex flex-col md:flex-row gap-8 md:gap-4">
-      <!-- Connecting line (desktop only) -->
-      <div class="steps-line hidden md:block" aria-hidden="true"></div>
-
+    <div class="flex flex-col">
       <!-- Step 1 -->
-      <div class="flex-1 text-center relative">
-        <div
-          class="animate-scale-in w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 text-white font-bold text-lg"
-          style="background: var(--gradient-hive);"
+      <div
+        class="animate-on-scroll flex items-start gap-5 md:gap-8 py-8 border-b"
+        style="border-color: var(--border-subtle);"
+      >
+        <span
+          class="font-mono text-[3rem] md:text-[5rem] leading-none font-bold select-none shrink-0"
+          style="color: var(--color-accent-hive); opacity: 0.12;"
+          aria-hidden="true">01</span
         >
-          1
+        <div class="pt-1 md:pt-3">
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Install
+          </h3>
+          <p class="text-sm text-text-secondary leading-relaxed max-w-[32rem]">
+            Install from the official MetaMask Snap directory or connect via the demo site.
+          </p>
         </div>
-        <h3 class="animate-on-scroll text-xl font-semibold text-white mb-2">
-          Install
-        </h3>
-        <p
-          class="animate-on-scroll text-sm text-text-secondary max-w-[240px] mx-auto"
-        >
-          Install from the official MetaMask Snap directory or connect via the demo site.
-        </p>
       </div>
 
       <!-- Step 2 -->
-      <div class="flex-1 text-center relative">
-        <div
-          class="animate-scale-in w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 text-white font-bold text-lg"
-          style="background: var(--gradient-hive); transition-delay: 150ms;"
+      <div
+        class="animate-on-scroll flex items-start gap-5 md:gap-8 py-8 border-b"
+        style="border-color: var(--border-subtle);"
+      >
+        <span
+          class="font-mono text-[3rem] md:text-[5rem] leading-none font-bold select-none shrink-0"
+          style="color: var(--color-accent-hive); opacity: 0.12;"
+          aria-hidden="true">02</span
         >
-          2
+        <div class="pt-1 md:pt-3">
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Approve
+          </h3>
+          <p class="text-sm text-text-secondary leading-relaxed max-w-[32rem]">
+            Approve BIP44 key derivation, RPC communication, dialog, and WebAssembly permissions.
+          </p>
         </div>
-        <h3 class="animate-on-scroll text-xl font-semibold text-white mb-2">
-          Approve
-        </h3>
-        <p
-          class="animate-on-scroll text-sm text-text-secondary max-w-[240px] mx-auto"
-        >
-          Approve BIP44 key derivation, RPC communication, dialog, and WebAssembly permissions.
-        </p>
       </div>
 
       <!-- Step 3 -->
-      <div class="flex-1 text-center relative">
-        <div
-          class="animate-scale-in w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 text-white font-bold text-lg"
-          style="background: var(--gradient-hive); transition-delay: 300ms;"
+      <div class="animate-on-scroll flex items-start gap-5 md:gap-8 py-8">
+        <span
+          class="font-mono text-[3rem] md:text-[5rem] leading-none font-bold select-none shrink-0"
+          style="color: var(--color-accent-hive); opacity: 0.12;"
+          aria-hidden="true">03</span
         >
-          3
+        <div class="pt-1 md:pt-3">
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Sign
+          </h3>
+          <p class="text-sm text-text-secondary leading-relaxed max-w-[32rem]">
+            Sign Hive transactions, encrypt and decrypt buffers, and retrieve your public keys.
+          </p>
         </div>
-        <h3 class="animate-on-scroll text-xl font-semibold text-white mb-2">
-          Sign
-        </h3>
-        <p
-          class="animate-on-scroll text-sm text-text-secondary max-w-[240px] mx-auto"
-        >
-          Sign Hive transactions, encrypt and decrypt buffers, and retrieve your public keys.
-        </p>
       </div>
     </div>
   </div>
