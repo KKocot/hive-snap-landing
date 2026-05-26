@@ -1,34 +1,48 @@
 ---
-const currentYear = new Date().getFullYear();
 ---
 
 <footer class="tmux-status" role="contentinfo">
   <div class="tmux-status__bar">
     <span class="tmux-status__segment"
       ><a
-        href="https://github.com/nicetransition/hive-wallet-snap"
+        href="https://gitlab.syncad.com/hive/metamask-snap"
         class="tmux-status__link"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Hive Wallet Snap — source on GitHub"
+        aria-label="Hive Wallet Snap — source on GitLab"
         >[hive wallet snap]</a
       ></span
-    ><span class="tmux-status__sep" aria-hidden="true">│</span><span
-      class="tmux-status__segment"
-      >&copy; {currentYear} BardDev</span
     ><span class="tmux-status__sep" aria-hidden="true">│</span><a
-      href="https://github.com/nicetransition/hive-wallet-snap/blob/main/LICENSE"
+      href="https://gitlab.syncad.com/hive/metamask-snap/-/blob/main/LICENSE.md?ref_type=heads"
       target="_blank"
       rel="noopener noreferrer"
       class="tmux-status__link"
       aria-label="MIT License — opens in new tab"
       >MIT License</a
-    ><span class="tmux-status__sep" aria-hidden="true">│</span><span
-      class="tmux-status__segment"
-      >built for <span class="tmux-status__hive">hive</span></span
-    ><span class="tmux-status__sep" aria-hidden="true">│</span><span
-      class="tmux-status__dot"
-      aria-label="MetaMask Snap Active">●</span
+    ><span class="tmux-status__sep" aria-hidden="true">│</span><a
+      href="https://hive.io"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="tmux-status__link"
+      >Hive</a
+    ><span class="tmux-status__sep" aria-hidden="true">│</span><a
+      href="https://blockchain-wares.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="tmux-status__link"
+      >Blockchain Wares</a
+    ><span class="tmux-status__sep" aria-hidden="true">│</span><a
+      href="https://auth.openhive.network/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="tmux-status__link"
+      >Wallet</a
+    ><span class="tmux-status__sep" aria-hidden="true">│</span><a
+      href="https://www.npmjs.com/package/@hiveio/metamask-snap"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="tmux-status__link"
+      >npm</a
     >
   </div>
 </footer>
@@ -85,33 +99,6 @@ const currentYear = new Date().getFullYear();
     outline: 2px solid var(--color-accent-hive);
     outline-offset: 2px;
     border-radius: 2px;
-  }
-
-  .tmux-status__hive {
-    color: var(--color-hive-text);
-    font-weight: 600;
-  }
-
-  .tmux-status__dot {
-    color: var(--color-success);
-    font-size: 0.5rem;
-    line-height: 1;
-    animation: pulse-dot 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse-dot {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.4;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tmux-status__dot {
-      animation: none;
-    }
   }
 
   @media (max-width: 40rem) {
